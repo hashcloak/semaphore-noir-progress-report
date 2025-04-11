@@ -1,0 +1,3 @@
+# Overview
+
+This is our progress update for [NRG #3](https://github.com/orgs/noir-lang/discussions/7442) to implement Semaphore in Noir. In this version, we add the Noir Semaphore Circuit along with an updated TypeScript SDK with respect to the Noir circuit. We also share [statistics](statistics.html) such as test coverage and benchmarks of the circuit in this report. In the end we compile a list of [discoveries and hurdles](discoveries.html) we encountered and our [plans](next_steps.html) for the final report.

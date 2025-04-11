@@ -1,0 +1,6 @@
+[book]
+authors = ["Elena Fuentes & Alex Liao"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Progress Report Semaphore in Noir"

@@ -33,7 +33,7 @@ It has 4 bytes of prepended data compared to the proof required by the Solidity 
 (Note: Based on the comments we saw on Discord, it seems like the issue is fixed in v0.82. Currently we are using v0.72.1. We will update the version and test it in the future versions.)
 
 ## Verifier contract too large
-Semaphore provides 32 verification keys for circuits of merkle tree depths 1 to 32. In the original contract, all keys are stored in a single `bytes` type, and the correct keys set are returned based on the input depth. However for UltraHonk, the verifier contract itself is very large and cannot include additional functions to select keys based on the depth. Additionally, the verification keys for UltraHonk are also too large to store in a single contract. 
+Semaphore provides 32 verification keys for circuits of merkle tree depths 1 to 32. In the original contract, all keys are stored in a single `bytes` type, and the correct keys set are returned based on the input depth. However for UltraHonk, the verifier contract itself is very large and cannot include additional functions to select keys based on the depth; this exceeds the 24KB contract size limit set by the EVM (even when using the Solidity optimizer). Additionally, the verification keys for UltraHonk are also too large to store in a single contract. 
 
 Currently, our design is to split the Noir verifier into one main verifier contract and three external libraries ---- one for controlling verification keys based on depth, and two for storing the verification keys. At present, we store the necessary addresses in the main verifier contract and call them through `delegatecall()`. We plan to refactor the contracts to avoid using `delegatecall` and also to optimize for lower gas consumption. 
 

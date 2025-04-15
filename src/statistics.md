@@ -16,36 +16,44 @@ Additionally, we have benchmarked the gate count directly on the Noir circuit wi
 
 To get more precise insights on the Noir side, we plan to add benchmarking for witness generation, proving and verifying for the circuit, separately from the SDK. 
 
+Machine details: MacBook Pro, Intel Core i7 (6-core, 2.6 GHz), 32 GB RAM.
+
 ### Node Benchmarks
 
+Version details:
+
+- @aztec/bb.js `0.82.2`
+- @noir-lang/noir_js `1.0.0-beta.3`
+- @noir-lang/noir_wasm `1.0.0-beta.3`
+
 #### Proof Generation
-| Function                                           | Avg Time (ms) | Samples |
-|----------------------------------------------------|----------------|---------|
-| Generate Proof 1 Member [Max tree depth 1]         | 1710.65        | 10      |
-| Generate Proof 100 Members [Max tree depth 7]      | 2311.87        | 10      |
-| Generate Proof 500 Members [Max tree depth 9]      | 2398.87        | 10      |
-| Generate Proof 1000 Members [Max tree depth 10]    | 2600.24        | 10      |
-| Generate Proof 2000 Members [Max tree depth 11]    | 3004.17        | 10      |
+| Function                                           | Avg Time for 10 runs (ms) |
+|----------------------------------------------------|:----------------:|
+| Generate Proof 1 Member [Max tree depth 1]         | 1710.65        |
+| Generate Proof 100 Members [Max tree depth 7]      | 2311.87        |
+| Generate Proof 500 Members [Max tree depth 9]      | 2398.87        |
+| Generate Proof 1000 Members [Max tree depth 10]    | 2600.24        |
+| Generate Proof 2000 Members [Max tree depth 11]    | 3004.17        |
 
 
 #### Proof Verification
-| Function                                           | Avg Time (ms) | Samples |
-|----------------------------------------------------|----------------|---------|
-| Verify Proof 1 Member [Max tree depth 1]           | 974.98         | 10      |
-| Verify Proof 100 Members [Max tree depth 7]        | 1359.02        | 10      |
-| Verify Proof 500 Members [Max tree depth 9]        | 1490.25        | 10      |
-| Verify Proof 1000 Members [Max tree depth 10]      | 1527.17        | 10      |
-| Verify Proof 2000 Members [Max tree depth 11]      | 1898.70        | 10      |
+| Function                                           | Avg Time for 10 runs (ms) |
+|----------------------------------------------------|:----------------:|
+| Verify Proof 1 Member [Max tree depth 1]           | 974.98         |
+| Verify Proof 100 Members [Max tree depth 7]        | 1359.02        |
+| Verify Proof 500 Members [Max tree depth 9]        | 1490.25        |
+| Verify Proof 1000 Members [Max tree depth 10]      | 1527.17        |
+| Verify Proof 2000 Members [Max tree depth 11]      | 1898.70        |
 
 ### Browser Benchmarks
 #### Proof Generation
-| Function                                           | Avg Time (ms) | Samples |
-|----------------------------------------------------|----------------|---------|
-| Generate Proof 1 Member [Max tree depth 1]         | 978.54         | 10      |
-| Generate Proof 100 Members [Max tree depth 7]      | 1543.11        | 10      |
-| Generate Proof 500 Members [Max tree depth 9]      | 1717.46        | 10      |
-| Generate Proof 1000 Members [Max tree depth 10]    | 1843.71        | 10      |
-| Generate Proof 2000 Members [Max tree depth 11]    | 2120.75        | 10      |
+| Function                                           | Avg Time for 10 runs (ms) |
+|----------------------------------------------------|:----------------:|
+| Generate Proof 1 Member [Max tree depth 1]         | 978.54         |
+| Generate Proof 100 Members [Max tree depth 7]      | 1543.11        |
+| Generate Proof 500 Members [Max tree depth 9]      | 1717.46        |
+| Generate Proof 1000 Members [Max tree depth 10]    | 1843.71        |
+| Generate Proof 2000 Members [Max tree depth 11]    | 2120.75        |
 ### Gas estimates
 
 | Function                                                        |Gas Usage|
@@ -66,6 +74,10 @@ To get more precise insights on the Noir side, we plan to add benchmarking for w
 
 
 ### Gate Count
+
+Version details:
+- nargo version = `1.0.0-beta.3`
+- bb `0.82.2`
 
 | MAX_DEPTH | acir_opcodes | circuit_size |
 |:--------- |:------------ |:------------ |
